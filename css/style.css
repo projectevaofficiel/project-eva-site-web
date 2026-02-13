@@ -171,6 +171,7 @@ body {
 
     .nav.active {
         display: flex;
+        corner-radius: 50%;
     }
 
     .nav a {
