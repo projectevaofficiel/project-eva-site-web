@@ -195,6 +195,7 @@ button:disabled {
 
     /* Menu devient plein écran */
     .nav {
+       z-index: 100;
         position: absolute;
         top: 70px;
         left: 0;
