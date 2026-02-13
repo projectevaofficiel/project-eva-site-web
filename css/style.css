@@ -1,0 +1,175 @@
+/* =========================
+   RESET
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh; /* IMPORTANT */
+    font-family: Arial, sans-serif;
+
+
+
+    background-image: url("../img/1353199.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* =========================
+   LAYOUT (footer en bas)
+   ========================= */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+    color: white;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+#banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px 25px;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#logo, #footerimg {
+    width: 200px;
+    height: auto;
+}
+
+#button-banner {
+    display: flex;
+    gap: 15px;
+}
+
+/* =========================
+   BOUTONS
+   ========================= */
+.banner-button {
+    width: 150px;
+    height: 45px;
+
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background-color: black;
+    color: white;
+    font-size: 15px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.banner-button:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.banner-button:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+footer {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+}
+#footerimg {
+    width: 200px;
+    height: auto;
+    margin-left: auto; /* 🔥 pousse à droite */
+}
+
+
+footer ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* =========================
+   📱 VERSION MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    /* HEADER devient vertical */
+    #banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* Logo plus petit */
+    #logo {
+        width: 140px;
+    }
+
+    /* Boutons en colonne */
+    #button-banner {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .banner-button {
+        width: 90%;
+        max-width: 300px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    /* MAIN padding réduit */
+    main {
+        padding: 25px;
+        text-align: center;
+    }
+
+    /* FOOTER vertical */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    #footerimg {
+        margin: 0 auto;
+        width: 140px;
+    }
+}
