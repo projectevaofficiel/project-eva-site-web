@@ -130,7 +130,7 @@ button:disabled {
     flex: 1;
     padding: 80px 40px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.85);
     border-radius: 20px;
     margin: 40px auto;
     max-width: 900px;
@@ -221,7 +221,7 @@ button:disabled {
     /* Main différent sur mobile */
     .main {
         padding: 40px 20px;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.80);
         border-radius: 20px;
         margin: 20px;
     }
