@@ -12,12 +12,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    color: white;
 
     background-image: url("../img/1353199.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
 }
 
 /* =========================
@@ -25,7 +25,7 @@ body {
 ========================= */
 .header {
     background: rgba(0, 0, 0, 0.85);
-    padding: 15px 30px;
+    padding: 15px 40px;
 }
 
 .header-container {
@@ -40,7 +40,7 @@ body {
 }
 
 /* =========================
-   NAVIGATION
+   NAVIGATION (PC)
 ========================= */
 .nav {
     display: flex;
@@ -50,10 +50,10 @@ body {
 .nav a {
     text-decoration: none;
     color: white;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 10px;
-    transition: 0.3s;
     background: black;
+    transition: all 0.3s ease;
 }
 
 .nav a:hover {
@@ -79,7 +79,7 @@ body {
     transition: 0.3s;
 }
 
-/* Animation hamburger → X */
+/* Animation en X */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -97,13 +97,21 @@ body {
 ========================= */
 .main {
     flex: 1;
-    padding: 60px 40px;
+    padding: 80px 40px;
     text-align: center;
+    background: rgba(0, 0, 0, 0.55);
 }
 
 .main h1 {
-    margin-bottom: 20px;
     font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.main p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* =========================
@@ -111,7 +119,7 @@ body {
 ========================= */
 .footer {
     background: rgba(0, 0, 0, 0.85);
-    padding: 20px 30px;
+    padding: 25px 40px;
 }
 
 .footer-content {
@@ -143,18 +151,19 @@ body {
 ========================= */
 @media (max-width: 768px) {
 
+    /* Hamburger visible */
     .menu-toggle {
         display: flex;
     }
 
+    /* Menu devient plein écran */
     .nav {
         position: absolute;
         top: 70px;
-        right: 0;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
+        left: 0;
         width: 100%;
-        text-align: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
         padding: 20px 0;
         display: none;
     }
@@ -164,12 +173,29 @@ body {
     }
 
     .nav a {
-        margin: 10px 0;
+        margin: 12px auto;
         width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
+        font-size: 18px;
     }
 
+    /* Main différent sur mobile */
+    .main {
+        padding: 40px 20px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 20px;
+        margin: 20px;
+    }
+
+    .main h1 {
+        font-size: 1.8rem;
+    }
+
+    .main p {
+        font-size: 16px;
+    }
+
+    /* Footer vertical */
     .footer-content {
         flex-direction: column;
         gap: 20px;
