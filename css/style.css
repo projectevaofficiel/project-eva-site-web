@@ -66,7 +66,7 @@ body {
    BOUTONS
 ========================= */
 button {
-    background: linear-gradient(90deg, #ff0033, #990000);
+    
     border: none;
     font-weight: bold;
     font-size: 1.1rem;
@@ -74,13 +74,12 @@ button {
     padding: 12px 28px;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 5px rgba(255, 0, 51, 0.5);
+
 }
 
 button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #ff0033;
+
 }
 
 button:disabled {
