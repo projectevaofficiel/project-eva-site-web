@@ -1,175 +1,182 @@
 /* =========================
    RESET
-   ========================= */
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    min-height: 100vh; /* IMPORTANT */
+body {
     font-family: Arial, sans-serif;
-
-
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
     background-image: url("../img/1353199.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-/* =========================
-   LAYOUT (footer en bas)
-   ========================= */
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-    padding: 40px;
     color: white;
 }
 
 /* =========================
    HEADER
-   ========================= */
-#banner {
+========================= */
+.header {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px 30px;
+}
+
+.header-container {
     display: flex;
     align-items: center;
-    gap: 20px;
-
-    padding: 15px 25px;
-    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: space-between;
+    position: relative;
 }
 
-#logo, #footerimg {
-    width: 200px;
-    height: auto;
-}
-
-#button-banner {
-    display: flex;
-    gap: 15px;
+.logo {
+    width: 180px;
 }
 
 /* =========================
-   BOUTONS
-   ========================= */
-.banner-button {
-    width: 150px;
-    height: 45px;
-
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-
-    background-color: black;
-    color: white;
-    font-size: 15px;
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+   NAVIGATION
+========================= */
+.nav {
+    display: flex;
+    gap: 20px;
 }
 
-.banner-button:hover {
-    background-color: white;
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+    background: black;
+}
+
+.nav a:hover {
+    background: white;
     color: black;
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
-.banner-button:active {
-    transform: scale(0.95);
+/* =========================
+   MENU HAMBURGER
+========================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Animation hamburger → X */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =========================
+   MAIN
+========================= */
+.main {
+    flex: 1;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.main h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
 }
 
 /* =========================
    FOOTER
-   ========================= */
-footer {
-    width: 100%;
+========================= */
+.footer {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px 30px;
+}
+
+.footer-content {
     display: flex;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.85);
-    color: white;
-}
-#footerimg {
-    width: 200px;
-    height: auto;
-    margin-left: auto; /* 🔥 pousse à droite */
+    justify-content: space-between;
+    align-items: center;
 }
 
+.footer-logo {
+    width: 150px;
+}
 
-footer ul {
+.footer ul {
     list-style: none;
     margin-top: 10px;
 }
 
-footer li {
-    margin-bottom: 8px;
-}
-
-footer a {
+.footer a {
     color: #4da3ff;
     text-decoration: none;
 }
 
-footer a:hover {
+.footer a:hover {
     text-decoration: underline;
 }
+
 /* =========================
-   📱 VERSION MOBILE
-   ========================= */
+   RESPONSIVE MOBILE
+========================= */
 @media (max-width: 768px) {
 
-    /* HEADER devient vertical */
-    #banner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
+    .menu-toggle {
+        display: flex;
     }
 
-    /* Logo plus petit */
-    #logo {
-        width: 140px;
-    }
-
-    /* Boutons en colonne */
-    #button-banner {
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
         width: 100%;
-        align-items: center;
-    }
-
-    .banner-button {
-        width: 90%;
-        max-width: 300px;
-        height: 50px;
-        font-size: 16px;
-    }
-
-    /* MAIN padding réduit */
-    main {
-        padding: 25px;
         text-align: center;
+        padding: 20px 0;
+        display: none;
     }
 
-    /* FOOTER vertical */
-    footer {
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        margin: 10px 0;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-content {
         flex-direction: column;
-        text-align: center;
         gap: 20px;
+        text-align: center;
     }
 
-    #footerimg {
-        margin: 0 auto;
-        width: 140px;
+    .footer-logo {
+        width: 120px;
     }
 }
