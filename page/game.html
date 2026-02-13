@@ -5,37 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Eva - Jeu</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Versioning pour éviter le cache -->
+    <link rel="stylesheet" href="../css/style.css?v=2">
     <link rel="icon" type="image/png" href="../favicon.png">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header id="banner">
-        <img id="logo" src="../img/unknowns game.png" alt="Project eva logo">
+<header class="header">
+    <div class="header-container">
+        <img src="../img/unknowns game.png" alt="Project Eva Logo" class="logo">
 
-        <nav id="button-banner">
-            <button class="banner-button" onclick="location.href='../index.html'">Home</button>
-            <button class="banner-button" onclick="location.href='game.html'">Le jeu</button>
-            <button class="banner-button" onclick="location.href='help.html'">Assistance</button>
+        <!-- Bouton hamburger -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav" id="nav">
+            <a href="../index.html">Home</a>
+            <a href="game.html">Le jeu</a>
+            <a href="help.html">Assistance</a>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <!-- CONTENU PRINCIPAL -->
-    <main>
-        <h1>Comment télécharger Project Eva</h1>
-        <p>
-            Cliquez 
-            <a href="https://quentinlaederach.itch.io/project-eva-1.11" target="_blank">
-                ici
-            </a>
-            pour télécharger le jeu.
-        </p>
-    </main>
+<main class="main">
+    <h1>Comment télécharger Project Eva</h1>
+    <p>
+        Cliquez 
+        <a href="https://quentinlaederach.itch.io/project-eva-1.11" target="_blank">
+            ici
+        </a>
+        pour télécharger le jeu.
+    </p>
+</main>
 
-    <!-- FOOTER -->
-    <footer>
+<footer class="footer">
+    <div class="footer-content">
         <div>
             <p><strong>Support :</strong></p>
             <ul>
@@ -54,9 +62,23 @@
             </ul>
         </div>
 
-        <img id="footerimg" src="../img/unknowns game.png" alt="Project eva logo">
-    </footer>
+        <img src="../img/unknowns game.png" alt="Project Eva Logo" class="footer-logo">
+    </div>
+</footer>
 
-    <script src="../js/script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+            toggle.classList.toggle("active");
+        });
+    }
+});
+</script>
+
 </body>
 </html>
