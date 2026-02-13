@@ -166,12 +166,12 @@ body {
         background: rgba(0, 0, 0, 0.95);
         padding: 20px 0;
         display: none;
-        corner-radius: 50%;
+        border-radius: 50%;
     }
 
     .nav.active {
         display: flex;
-        corner-radius: 50%;
+        border-radius: 50%;
     }
 
     .nav a {
