@@ -166,7 +166,7 @@ body {
         background: rgba(0, 0, 0, 0.95);
         padding: 20px 0;
         display: none;
-        corner_radius: 50%;
+        corner-radius: 50%;
     }
 
     .nav.active {
